@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* body {
+    font-family: "Dosis", sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   */
+/* } */
+.animationCotainer {
+     position: relative; 
+    width: 600px;
+    height: 600px; 
+    z-index: 999;
+   left: 30%;
+    /* margin-top: 700px  ;
+    margin-bottom: 0; */
+}
+.center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+.center-logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+#animi-menu {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -125px;
+    list-style: none;
+    font-size: 200%;
+}
+.menu-button {
+    opacity: 0;
+    z-index: -1;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -125px;
+    border-radius: 50%;
+    background-size: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+#animi-menu:not(:target) > a:first-of-type,
+#animi-menu:target > a:last-of-type {
+    opacity: 1;
+    z-index: 1;
+}
+#animi-menu:not(:target) > .icon-plus:before,
+#animi-menu:target > .icon-minus:before {
+    opacity: 1;
+}
+.menu-item {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -55px;
+    border-radius: 50%;
+    background-color: #424242;
+    transform: translate(0px, 0px);
+    transition: transform 500ms, opacity 500ms;
+    z-index: -2;
+    transition: .5s;
+    cursor: pointer;
+}
+.menu-item:hover {
+    transform: scale(2);  /* Increase size on hover */
+}
+.menu-item img:hover {
+    opacity: 0.5;
+    box-shadow: 0 5px 10px black;
+    transform: scale(2) !important;  /* Increase size on hover */
+}
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#animi-menu:target > .menu-item:nth-child(3) { transform: rotate(0deg) translate(190px) rotate(0deg); transition-delay: 0s; }
+#animi-menu:target > .menu-item:nth-child(4) { transform: rotate(51.42deg) translate(190px) rotate(-51.42deg); transition-delay: 0.1s; }
+#animi-menu:target > .menu-item:nth-child(5) { transform: rotate(102.84deg) translate(190px) rotate(-102.84deg); transition-delay: 0.2s; }
+#animi-menu:target > .menu-item:nth-child(6) { transform: rotate(154.26deg) translate(190px) rotate(-154.26deg); transition-delay: 0.3s; }
+#animi-menu:target > .menu-item:nth-child(7) { transform: rotate(205.68deg) translate(190px) rotate(-205.68deg); transition-delay: 0.4s; }
+#animi-menu:target > .menu-item:nth-child(8) { transform: rotate(257.1deg) translate(190px) rotate(-257.1deg); transition-delay: 0.5s; }
+#animi-menu:target > .menu-item:nth-child(9) { transform: rotate(308.52deg) translate(190px) rotate(-308.52deg); transition-delay: 0.6s; }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive styling */
+@media (max-width: 500px) {
+    .animationCotainer {
+        width: 300px;
+        height: 300px;
+    }
+    .center-logo {
+        width: 80px;
+        height: 80px;
+    }
+    #animi-menu {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+    .menu-button {
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+    }
+    .menu-item {
+        width: 70px;
+        height: 70px;
+        margin: -35px;
+    }
+    #animi-menu:target > .menu-item:nth-child(3) { transform: rotate(0deg) translate(100px) rotate(0deg); }
+    #animi-menu:target > .menu-item:nth-child(4) { transform: rotate(51.42deg) translate(100px) rotate(-51.42deg); }
+    #animi-menu:target > .menu-item:nth-child(5) { transform: rotate(102.84deg) translate(100px) rotate(-102.84deg); }
+    #animi-menu:target > .menu-item:nth-child(6) { transform: rotate(154.26deg) translate(100px) rotate(-154.26deg); }
+    #animi-menu:target > .menu-item:nth-child(7) { transform: rotate(205.68deg) translate(100px) rotate(-205.68deg); }
+    #animi-menu:target > .menu-item:nth-child(8) { transform: rotate(257.1deg) translate(100px) rotate(-257.1deg); }
+    #animi-menu:target > .menu-item:nth-child(9) { transform: rotate(308.52deg) translate(100px) rotate(-308.52deg); }
+}
+/* footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+} */
